@@ -6,24 +6,26 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Your developer will connect this to Supabase later
     console.log("Logging in with:", email, password);
   };
 
   return (
     <div style={styles.container}>
       <div style={styles.loginCard}>
+        {/* System Name / Logo Section */}
         <div style={styles.header}>
-          <h1 style={styles.title}>VigilResto IQ</h1>
-          <p style={styles.subtitle}>Enter your credentials to access your dashboard</p>
+          <h1 style={styles.title}>VIGILRESTO IQ</h1>
+          <div style={styles.accentLine}></div>
+          <p style={styles.subtitle}>Sign in to your administration panel</p>
         </div>
 
+        {/* Credentials Form */}
         <form onSubmit={handleLogin} style={styles.form}>
           <div style={styles.inputGroup}>
             <label style={styles.label}>Email Address</label>
             <input 
               type="email" 
-              placeholder="name@company.com" 
+              placeholder="Enter your email" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={styles.input}
@@ -44,7 +46,7 @@ const Login = () => {
           </div>
 
           <button type="submit" style={styles.button}>
-            Sign In
+            Access Dashboard
           </button>
         </form>
       </div>
@@ -52,14 +54,13 @@ const Login = () => {
   );
 };
 
-// Inline styles for quick rendering without messing up your CSS files
 const styles = {
   container: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     minHeight: '100vh',
-    backgroundColor: '#050505', // Vanta Black Base
+    backgroundColor: '#030303',
     fontFamily: 'system-ui, -apple-system, sans-serif',
     margin: 0,
     padding: '20px',
@@ -67,33 +68,39 @@ const styles = {
   loginCard: {
     width: '100%',
     maxWidth: '400px',
-    backgroundColor: '#121212', // Slightly lighter dark for depth
+    backgroundColor: '#0a0a0a',
     padding: '40px',
-    borderRadius: '12px',
-    border: '1px solid #222222', // Subtle outline to define the card
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.8)',
+    borderRadius: '8px',
+    border: '1px solid #1a1a1a',
+    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.9)',
   },
   header: {
     textAlign: 'center',
-    marginBottom: '32px',
+    marginBottom: '35px',
   },
   title: {
     color: '#ffffff',
-    fontSize: '28px',
-    fontWeight: '700',
-    letterSpacing: '-0.5px',
-    margin: '0 0 8px 0',
+    fontSize: '24px',
+    fontWeight: '800',
+    letterSpacing: '3px',
+    margin: '0 0 10px 0',
+  },
+  accentLine: {
+    width: '40px',
+    height: '2px',
+    backgroundColor: '#ffffff',
+    margin: '0 auto 12px auto',
   },
   subtitle: {
-    color: '#888888',
-    fontSize: '14px',
+    color: '#666666',
+    fontSize: '13px',
     margin: 0,
-    lineHeight: '1.5',
+    letterSpacing: '0.5px',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '20px',
+    gap: '24px',
   },
   inputGroup: {
     display: 'flex',
@@ -101,33 +108,35 @@ const styles = {
     gap: '8px',
   },
   label: {
-    color: '#cccccc',
-    fontSize: '12px',
+    color: '#888888',
+    fontSize: '11px',
     fontWeight: '600',
     textTransform: 'uppercase',
-    letterSpacing: '0.5px',
+    letterSpacing: '1.5px',
   },
   input: {
-    backgroundColor: '#1a1a1a',
-    border: '1px solid #333333',
-    borderRadius: '6px',
-    padding: '12px 16px',
+    backgroundColor: '#121212', 
+    border: '1px solid #222222', 
+    borderRadius: '4px',
+    padding: '14px 16px',
     color: '#ffffff',
-    fontSize: '15px',
+    fontSize: '14px',
     outline: 'none',
-    transition: 'border-color 0.2s',
+    transition: 'border-color 0.2s, box-shadow 0.2s',
   },
   button: {
-    backgroundColor: '#ffffff', // High contrast white button on black background
+    backgroundColor: '#ffffff', 
     color: '#000000',
     border: 'none',
-    borderRadius: '6px',
+    borderRadius: '4px',
     padding: '14px',
-    fontSize: '15px',
-    fontWeight: '600',
+    fontSize: '14px',
+    fontWeight: '700',
+    letterSpacing: '1px',
+    textTransform: 'uppercase',
     cursor: 'pointer',
     marginTop: '10px',
-    transition: 'background-color 0.2s',
+    transition: 'opacity 0.2s',
   }
 };
 
